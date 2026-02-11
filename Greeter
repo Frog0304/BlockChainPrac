@@ -1,0 +1,22 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.10;
+
+contract Greeter {
+    // State variable to store the name
+    string public yourname;
+
+    // The constructor runs once when the contract is deployed
+    constructor() {
+        yourname = "HELLO WORLD 123";
+    }
+
+    // Changes the value of yourname (costs gas)
+    function set(string memory _name) public {
+        yourname = _name;
+    }
+
+    // Returns the value of yourname (free to call if not part of a transaction)
+    function get() public view returns (string memory) {
+        return yourname;
+    }
+}
